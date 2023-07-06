@@ -21,13 +21,7 @@
     pip install -r requirements.txt
     ```
 
-5. Поднимаем базу данных (нужен докер или postgresql)
-
-    ```shell
-    docker compose up database -d 
-    ```
-
-6. Запуск из папки stream2
+5. Запуск из папки stream2
 
     ```shell
     python manage.py runserver
