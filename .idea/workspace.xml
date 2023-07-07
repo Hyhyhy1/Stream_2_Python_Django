@@ -4,13 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ceb71993-54bd-4039-bf22-db17acb665a6" name="Changes" comment="Создал панель администратора и приложение для регистрации">
-      <change afterPath="$PROJECT_DIR$/stream2/registration/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stream2/main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/stream2/main/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stream2/registration/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/stream2/registration/views.py" afterDir="false" />
+    <list default="true" id="ceb71993-54bd-4039-bf22-db17acb665a6" name="Changes" comment="прописал views в приложении для регистрации">
+      <change afterPath="$PROJECT_DIR$/stream2/album/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stream2/album/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stream2/album/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stream2/album/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stream2/album/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stream2/album/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stream2/album/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stream2/album/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stream2/playlist/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stream2/playlist/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stream2/playlist/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stream2/playlist/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stream2/playlist/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stream2/playlist/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stream2/playlist/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stream2/playlist/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stream2/song/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stream2/song/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stream2/song/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stream2/song/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stream2/song/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stream2/song/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stream2/song/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stream2/song/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/stream2/stream2/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/stream2/stream2/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stream2/stream2/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/stream2/stream2/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,7 +45,23 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <excluded-from-favorite>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="master" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </excluded-from-favorite>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/stream2/registration/urls.py" root0="SKIP_INSPECTION" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -72,7 +107,7 @@
       <workItem from="1688624882848" duration="459000" />
       <workItem from="1688709932714" duration="59000" />
       <workItem from="1688710694156" duration="1870000" />
-      <workItem from="1688712635661" duration="5462000" />
+      <workItem from="1688712635661" duration="5806000" />
     </task>
     <task id="LOCAL-00001" summary="Создал панель администратора и приложение для регистрации">
       <created>1688713626329</created>
@@ -88,7 +123,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688713878686</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="прописал views в приложении для регистрации">
+      <created>1688718186045</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1688718186045</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -107,7 +149,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Создал панель администратора и приложение для регистрации" />
-    <option name="LAST_COMMIT_MESSAGE" value="Создал панель администратора и приложение для регистрации" />
+    <MESSAGE value="прописал views в приложении для регистрации" />
+    <option name="LAST_COMMIT_MESSAGE" value="прописал views в приложении для регистрации" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Stream_2_Python_Django$settings.coverage" NAME="settings Coverage Results" MODIFIED="1688717550048" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/stream2/stream2" />
