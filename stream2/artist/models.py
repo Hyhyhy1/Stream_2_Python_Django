@@ -20,3 +20,8 @@ class Artist(models.Model):
     def __str__(self) -> str:
         return self.name
     
+    
+class ArtistSocialLinks(models.Model):
+    artist_id = models.ForeignKey(Artist, on_delete=models.CASCADE)
+    url = models.CharField(max_length=255)
+ 

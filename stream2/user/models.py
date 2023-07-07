@@ -21,4 +21,17 @@ class User(AbstractUser):
     objects = CustomUserManager()
     def __str__(self) -> str:
         return self.email
+ 
     
+
+class UserSubscriptions(models.Model):
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
+    artist_id = models.ForeignKey("artist.Artist", on_delete=models.CASCADE)
+
+class UserLikedSongs(models.Model):
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
+    song_id = models.ForeignKey("song.Song", on_delete=models.CASCADE)
+
+class UserBannedSongs(models.Model):
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
+    song_id = models.ForeignKey("song.Song", on_delete=models.CASCADE)
