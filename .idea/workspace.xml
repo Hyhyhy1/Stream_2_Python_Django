@@ -4,32 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ceb71993-54bd-4039-bf22-db17acb665a6" name="Changes" comment="прописал views в приложении для регистрации">
-      <change afterPath="$PROJECT_DIR$/stream2/album/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stream2/album/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stream2/album/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stream2/album/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stream2/album/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stream2/album/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stream2/album/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stream2/album/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stream2/playlist/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stream2/playlist/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stream2/playlist/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stream2/playlist/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stream2/playlist/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stream2/playlist/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stream2/playlist/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stream2/playlist/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stream2/song/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stream2/song/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stream2/song/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stream2/song/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stream2/song/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stream2/song/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stream2/song/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stream2/song/views.py" afterDir="false" />
+    <list default="true" id="a8144197-6a66-4770-bd98-5a51af85b965" name="Changes" comment="прописал views в приложении для регистрации">
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Stream_2_Python_Django.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Stream_2_Python_Django.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stream2/playlist/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/stream2/playlist/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stream2/song/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/stream2/song/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/stream2/stream2/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/stream2/stream2/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stream2/stream2/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/stream2/stream2/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,8 +22,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -72,21 +55,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/danil/PycharmProjects/Stream_2_Python_Django/stream2/registration",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Admin/Downloads/drfsite&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\danil\PycharmProjects\Stream_2_Python_Django\stream2\registration" />
@@ -99,7 +83,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="ceb71993-54bd-4039-bf22-db17acb665a6" name="Changes" comment="" />
+      <changelist id="a8144197-6a66-4770-bd98-5a51af85b965" name="Changes" comment="прописал views в приложении для регистрации" />
       <created>1688624869376</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -108,6 +92,8 @@
       <workItem from="1688709932714" duration="59000" />
       <workItem from="1688710694156" duration="1870000" />
       <workItem from="1688712635661" duration="5806000" />
+      <workItem from="1688966248688" duration="13194000" />
+      <workItem from="1689001602202" duration="1198000" />
     </task>
     <task id="LOCAL-00001" summary="Создал панель администратора и приложение для регистрации">
       <created>1688713626329</created>
