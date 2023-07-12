@@ -27,4 +27,5 @@ urlpatterns = [
     re_path(r'^auth/', include("djoser.urls.authtoken")),
     path('api/playlist/', playlistApiView.as_view()),
     path('', include('artist.urls')),
+    path('', include('user.urls')),
 ]

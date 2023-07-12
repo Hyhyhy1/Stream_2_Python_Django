@@ -1,6 +1,6 @@
 from rest_framework import viewsets, permissions, status, exceptions
 from rest_framework.response import Response
-from .models import Artist
+from .models import Artist, ArtistSocialLinks
 from .serializers import ArtistSerializer
 from django.core.exceptions import ObjectDoesNotExist
 
@@ -8,7 +8,7 @@ from django.core.exceptions import ObjectDoesNotExist
 class UserIsAlreadyArtistException(exceptions.APIException):
     status_code = 400
     default_detail = "User is already artist"
- 
+
 class ArtistViewSet(viewsets.ModelViewSet):
     queryset = Artist.objects.all()
     serializer_class = ArtistSerializer
