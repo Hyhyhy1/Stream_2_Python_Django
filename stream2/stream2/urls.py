@@ -15,8 +15,9 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include, re_path
-from playlist.views import playlistApiView
+from django.urls import path, include
+from .yasg import urlpatterns as doc_urls
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,4 +29,7 @@ urlpatterns = [
     path('api/playlist/', playlistApiView.as_view()),
     path('', include('artist.urls')),
     path('', include('user.urls')),
+    path('', include('album.urls')),
 ]
+
+urlpatterns += doc_urls
