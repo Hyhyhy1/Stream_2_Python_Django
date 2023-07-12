@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a8144197-6a66-4770-bd98-5a51af85b965" name="Changes" comment="прописал views в приложении для регистрации">
-      <change beforePath="$PROJECT_DIR$/.idea/Stream_2_Python_Django.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Stream_2_Python_Django.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stream2/song/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/stream2/song/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stream2/song/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/stream2/song/serializers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/stream2/song/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/stream2/song/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

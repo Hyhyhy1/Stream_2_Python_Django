@@ -9,7 +9,7 @@ from rest_framework.parsers import MultiPartParser, FormParser
 
 
 from .models import Song
-from .serializers import SongSerializer, FileUploadSerializer
+from .serializers import SongSerializer, FileUploadSerializer, SongDataSerializer
 # Create your views here.
 
 
@@ -25,31 +25,39 @@ class SongAPI(generics.RetrieveUpdateDestroyAPIView):
 
 class AudioUploadView(APIView):
     parser_classes = (MultiPartParser, FormParser)
-
+    #queryset = Song.objects.all()
+    #serializer_class = SongSerializer
     def post(self, request, *args, **kwargs):
-        user_id = request.user.id
-        file_obj = request.FILES['file']
-        print(request)
-        print(file_obj)
-        print(request.data)
 
+        serializer = SongDataSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        file_url = self.UploadFile(request)
+        serializer.validated_data['song_uri'] = file_url
+        #serializer.validated_data['artists'] = request.user.id
+        serializer = SongSerializer(data=serializer.validated_data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(serializer.data)
+
+
+    def UploadFile(self, request):
         serializer = FileUploadSerializer(data=request.data)
         if serializer.is_valid():
             file_obj = serializer.validated_data['file']
             if file_obj.content_type != 'audio/mpeg' and file_obj.content_type != 'audio/x-flac':
-                return Response(serializer.errors, status=418) #для будущих поколений - добавьте описание про некорректный формат
+                return Response(serializer.errors,
+                                status=418)  #TODO добавить описание про некорректный формат, но я не знаю как
 
-            file_name = f'{uuid4()}.{file_obj.name.split(".")[-1]}' #если будет получен uuid юзера можно добавить создание папок. Добавить в начало {user.id}/
+            file_name = f'{uuid4()}.{file_obj.name.split(".")[-1]}'  #вставить для создания каталогов пользователей{user_id}/
 
-            #подключалось тестовое облако, заменить все данные на нужные
+            # подключалось тестовое облако, заменить все данные на нужные
             s3 = boto3.client('s3',
-                    endpoint_url='https://s3.us-east-005.backblazeb2.com',
-                    aws_access_key_id='',
-                    aws_secret_access_key='')
+                              endpoint_url='https://s3.us-east-005.backblazeb2.com',
+                              aws_access_key_id='0052f74eb7913790000000002',
+                              aws_secret_access_key='K005UkQ2LN8YtYzMUdiBV2qNI/VO/ek')
 
             s3.upload_fileobj(file_obj, 'UrFUbe-videos', file_name)
-            return Response({'url': 'https://UrFUbe-videos.s3.us-east-005.backblazeb2.com/' + file_name})
+            return 'https://UrFUbe-videos.s3.us-east-005.backblazeb2.com/' + file_name
         else:
             return Response(serializer.errors, status=400)
-
 
