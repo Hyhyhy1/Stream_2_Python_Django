@@ -1,10 +1,12 @@
-from django.shortcuts import render
+from django.forms import model_to_dict
+
+import boto3
 from uuid import uuid4
 from rest_framework import generics
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.parsers import MultiPartParser, FormParser
-import boto3
+
 
 from .models import Song
 from .serializers import SongSerializer, FileUploadSerializer
@@ -21,20 +23,20 @@ class SongAPI(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = SongSerializer
 
 
-class SongCreator(generics.CreateAPIView):
-    queryset = Song.objects.all()
-    serializer_class = SongSerializer
-
-
-class FileUploadView(APIView):
+class AudioUploadView(APIView):
     parser_classes = (MultiPartParser, FormParser)
 
     def post(self, request, *args, **kwargs):
+        user_id = request.user.id
+        file_obj = request.FILES['file']
+        print(request)
+        print(file_obj)
+        print(request.data)
+
         serializer = FileUploadSerializer(data=request.data)
         if serializer.is_valid():
             file_obj = serializer.validated_data['file']
-
-            if file_obj.content_type != 'audio/mpeg' and file_obj.content_type != 'audio/flac':
+            if file_obj.content_type != 'audio/mpeg' and file_obj.content_type != 'audio/x-flac':
                 return Response(serializer.errors, status=418) #для будущих поколений - добавьте описание про некорректный формат
 
             file_name = f'{uuid4()}.{file_obj.name.split(".")[-1]}' #если будет получен uuid юзера можно добавить создание папок. Добавить в начало {user.id}/
@@ -49,6 +51,5 @@ class FileUploadView(APIView):
             return Response({'url': 'https://UrFUbe-videos.s3.us-east-005.backblazeb2.com/' + file_name})
         else:
             return Response(serializer.errors, status=400)
-
 
 
