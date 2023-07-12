@@ -46,7 +46,8 @@ INSTALLED_APPS = [
     'song.apps.SongConfig',
     'playlist.apps.PlaylistConfig',
     'album.apps.AlbumConfig',
-    'registration.apps.RegistrationConfig'
+    'registration.apps.RegistrationConfig',
+    'drf_yasg'
 ]
 
 MIDDLEWARE = [

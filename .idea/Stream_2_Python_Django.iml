@@ -19,4 +19,11 @@
       </list>
     </option>
   </component>
+  <component name="TemplatesService">
+    <option name="TEMPLATE_FOLDERS">
+      <list>
+        <option value="$MODULE_DIR$/stream2/main/templates" />
+      </list>
+    </option>
+  </component>
 </module>
