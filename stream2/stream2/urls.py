@@ -23,8 +23,13 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('main.urls')),
     path('', include('song.urls')),
+    path('api/drf-auth/', include("rest_framework.urls")),
+    path('api/auth/', include("djoser.urls")),
+    re_path(r'^auth/', include("djoser.urls.authtoken")),
+    path('api/playlist/', playlistApiView.as_view()),
+    path('', include('artist.urls')),
+    path('', include('user.urls')),
     path('', include('album.urls')),
-
 ]
 
 urlpatterns += doc_urls

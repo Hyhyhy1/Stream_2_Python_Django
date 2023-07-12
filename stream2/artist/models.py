@@ -12,7 +12,7 @@ class Artist(models.Model):
     picture_url = models.CharField(max_length=512, blank=True, null=True)
     about = models.TextField(max_length=512, blank=True, null=True)
     sex = models.IntegerField(choices=Sex.choices)
-
+    
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     
