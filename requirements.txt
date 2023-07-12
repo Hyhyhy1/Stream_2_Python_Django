@@ -8,3 +8,4 @@ typing_extensions==4.7.1
 tzdata==2023.3
 djoser==2.2.0
 boto3==1.26.142
+drf-yasg==1.21.6
