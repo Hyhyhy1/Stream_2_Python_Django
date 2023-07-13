@@ -9,7 +9,7 @@ class Artist(models.Model):
     
     user_id = models.OneToOneField(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=255)
-    picture_url = models.CharField(max_length=512, blank=True, null=True)
+    picture_url = models.CharField(blank=True, null=True, max_length=512)
     about = models.TextField(max_length=512, blank=True, null=True)
     sex = models.IntegerField(choices=Sex.choices)
     
