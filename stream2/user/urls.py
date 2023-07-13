@@ -4,6 +4,7 @@ from .views import UserSongLikeView, UserSongLikeListView, UserSongBannedListVie
 
 
 urlpatterns = [
+
     path('api/song/<int:song_id>/like/', UserSongLikeView.as_view()),
     path('api/users/likes/', UserSongLikeListView.as_view()),
 
