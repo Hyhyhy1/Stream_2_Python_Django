@@ -48,7 +48,7 @@ class AudioUploadView(APIView):
                 return Response(serializer.errors,
                                 status=418)  #TODO добавить описание про некорректный формат, но я не знаю как
 
-            file_name = f'{uuid4()}.{file_obj.name.split(".")[-1]}'  #вставить для создания каталогов пользователей{user_id}/
+            file_name = f'{uuid4()}.{file_obj.name.split(".")[-1]}'  #вставить в начало для создания каталогов пользователей{user_id}/
 
             # подключалось тестовое облако, заменить все данные на нужные
             s3 = boto3.client('s3',
