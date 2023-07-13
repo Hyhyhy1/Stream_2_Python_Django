@@ -1,9 +1,15 @@
 from rest_framework import viewsets, permissions, status, exceptions
+import boto3
 from rest_framework.response import Response
 from .models import Artist, ArtistSocialLinks
 from .serializers import ArtistSerializer
 from django.core.exceptions import ObjectDoesNotExist
+from rest_framework.parsers import JSONParser
+from .parser import MultipartJsonParser
+import uuid
 
+
+ALLOWD_IMAGE_CONTENT_TYPES = ["image/png", "image/jpeg"]
 
 class UserIsAlreadyArtistException(exceptions.APIException):
     status_code = 400
@@ -13,6 +19,7 @@ class ArtistViewSet(viewsets.ModelViewSet):
     queryset = Artist.objects.all()
     serializer_class = ArtistSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+    parser_classes = (MultipartJsonParser, JSONParser)
 
     def check_object_permission(self, request, obj):
         print(request.user, obj.user_id)
@@ -29,14 +36,40 @@ class ArtistViewSet(viewsets.ModelViewSet):
                 raise UserIsAlreadyArtistException
         except ObjectDoesNotExist:
             pass
+        
+        if request.data.get("media"):
+            image_url = self.upload_image(request)
+            print(f"{image_url=}")
+            if not isinstance(image_url, str):
+                return image_url
+            
             
         artist = Artist.objects.create(
+            **serializer.validated_data,
             user_id=request.user,
-            **serializer.validated_data
+            picture_url=image_url,
         )
         
         headers = self.get_success_headers(serializer.data)
         return Response(artist, status=status.HTTP_201_CREATED, headers=headers)
+    
+    def upload_image(self, request):
+        file_obj = request.data.get("media")
+        
+        if file_obj.content_type not in ALLOWD_IMAGE_CONTENT_TYPES:
+            return Response({"error": "bad content type"}, status=418)
+
+        file_name = f'{uuid.uuid4()}.{file_obj.name.split(".")[-1]}'  
+
+        s3 = boto3.client('s3',
+                          endpoint_url='https://s3.us-east-005.backblazeb2.com',
+                          aws_access_key_id='0052f74eb7913790000000002',
+                          aws_secret_access_key='K005UkQ2LN8YtYzMUdiBV2qNI/VO/ek')
+
+        s3.upload_fileobj(file_obj.file, 'UrFUbe-videos', file_name)
+        return 'https://UrFUbe-videos.s3.us-east-005.backblazeb2.com/' + file_name
+    
+    
     
     def update(self, request, *args, **kwargs):
         partial = kwargs.pop('partial', False)
